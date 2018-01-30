@@ -1,0 +1,23 @@
+<ul class="c-treeview-menu" [hidden]="!data.isExpend" *ngIf="!isLeaf(data)">
+  <li *ngFor="let item of data.children">
+    <!--有路由的链接-->
+    <a (click)="itemClicked(item);" *ngIf="item.url && item.url!='' "
+       routerLink="{{item.url}}"
+       routerLinkActive
+       #rla="routerLinkActive"
+       [ngClass]="{'text-success':rla.isActive}">
+      <i class="fa" [ngClass]="item.icon"></i> <span>{{item.name}}</span>
+      <i class="pull-right fa" [class.fa-hand-o-left]="rla.isActive"></i>
+      <i style="margin-top:3px;width:17px" class="fa  pull-right"
+         [ngClass]="{'fa-angle-down': !isLeaf(item) && item.isExpend, 'fa-angle-left': !isLeaf(item) && !item.isExpend}"></i>
+    </a>
+    <!--无路由的链接-->
+    <a (click)="itemClicked(item);" *ngIf="item.url==null || item.url=='' ">
+      <i class="fa" [ngClass]="item.icon"></i> <span>{{item.name}}</span>
+      <i class="pull-right"></i>
+      <i style="margin-top:3px;width:17px" class="fa  pull-right"
+         [ngClass]="{'fa-angle-down': !isLeaf(item) && item.isExpend, 'fa-angle-left': !isLeaf(item) && !item.isExpend}"></i>
+    </a>
+    <treeview-menu [data]=item></treeview-menu>
+  </li>
+</ul>

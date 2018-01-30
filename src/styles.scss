@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+// awesome字体图标
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+// 动画
+@import '../node_modules/animate.css/animate.min.css';
+
+//bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import '../node_modules/bootstrap/scss/bootstrap-reboot.scss';
+
+//ag-grid
+@import "../node_modules/ag-grid/dist/styles/ag-grid.css";
+@import "../node_modules/ag-grid/dist/styles/theme-fresh.css";
+@import "../node_modules/ag-grid/dist/styles/theme-blue.css";
+@import "../node_modules/ag-grid/dist/styles/theme-dark.css";
+@import "../node_modules/ag-grid/dist/styles/theme-bootstrap.css";
+@import "../node_modules/ag-grid/dist/styles/theme-material.css";
+
+//semantic-ui
+@import "assets/css/ng2-semantic-ui/semantic.min.css";

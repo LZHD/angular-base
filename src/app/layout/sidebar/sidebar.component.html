@@ -1,0 +1,65 @@
+<!--搜索框-->
+<div class="search-input">
+  <div class="input-group">
+    <!--弹出样式的模板-->
+    <ng-template #customItemTemplate let-model="item" let-index="item.parent">
+      <div class="item animate fadeInDown animation-3">
+        <span class="badge badge-success"><div class="id_lable">{{model.id}}</div></span>
+        <i class="fa {{model.icon}} fa-fw pr-3 pl-2"></i>
+        <span class="">{{model.name}}</span>
+        <p class="float-right color-gary">{{model.keyWord}}</p>
+      </div>
+    </ng-template>
+
+    <input [(ngModel)]="searchTxt"
+           [typeahead]="dataArray"
+           [typeaheadItemTemplate]="customItemTemplate"
+           typeaheadOptionField="searchText"
+           typeaheadGroupField="parentName"
+           placeholder="搜索菜单..."
+           (typeaheadOnSelect)="typeaheadOnSelect($event)"
+           (ngModelChange)="valuechange($event)"
+           (keyup.enter)="searchMenu()"
+           class="form-control">
+    <span class="input-group-btn">
+      <button class="btn btn-outline-success" type="button" (click)="reset()">
+        <i class="fa  fa-refresh fa-fw"></i>
+      </button>
+    </span>
+  </div>
+</div>
+
+<!--tree 菜单-->
+<div class="c-nav">
+  <span class="c-search-msg" [hidden]="searchMsgHidden">搜索的菜单不存在...</span>
+  <ul class="c-sidebar-menu" [hidden]="!searchMsgHidden">
+    <li *ngFor="let item of data">
+      <a (click)="itemClicked(item);" *ngIf="item.url && item.url!='' "
+         [routerLinkActiveOptions]="{exact:true}"
+         routerLink="{{item.url}}"
+         routerLinkActive
+         #rla="routerLinkActive"
+         [ngClass]="{'text-success':rla.isActive}">
+        <i style="margin-top:3px;width:17px" class="fa  pull-right"
+           [ngClass]="{
+                   'fa-angle-down': !isLeaf(item) && item.isExpend,
+                   'fa-angle-left': !isLeaf(item) && !item.isExpend,
+                   'fa-hand-o-left': isLeaf(item) && rla.isActive
+                   }">
+        </i>
+        <i class="fa " [ngClass]="item.icon"></i> <span>{{item.name}}</span>
+      </a>
+      <a (click)="itemClicked(item);" *ngIf="item.url==null || item.url=='' ">
+        <i style="margin-top:3px;width:17px" class="fa  pull-right"
+           [ngClass]="{
+                   'fa-angle-down': !isLeaf(item) && item.isExpend,
+                   'fa-angle-left': !isLeaf(item) && !item.isExpend
+                   }">
+        </i>
+        <i class="fa " [ngClass]="item.icon"></i> <span>{{item.name}}</span>
+      </a>
+      <treeview-menu [data]=item></treeview-menu>
+    </li>
+  </ul>
+</div>
+

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ccc App', () => {
+describe('AngularStudy App', () => {
   let page: AppPage;
 
   beforeEach(() => {
