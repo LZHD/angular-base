@@ -12,7 +12,7 @@ export class TreeviewMenuComponent implements OnInit {
   @Input() data: Array<MenuData>;
 
   constructor(private router: Router,
-              private route: ActivatedRoute,) {
+              private route: ActivatedRoute) {
     // this.appService.activeMenuEventEmitter.subscribe(name => {
     //   if (this.data['name'] === name) {
     //     this.appService.titleEventEmitter.emit(name);
