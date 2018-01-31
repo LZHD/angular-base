@@ -7,6 +7,8 @@ import {MainData} from "./model/mainModel";
  * 主体组件
  */
 @Component({
+  selector: 'app-main',
+  styleUrls: ['./main.component.scss'],
   templateUrl: './main.component.html'
 })
 

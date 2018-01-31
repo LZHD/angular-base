@@ -6,7 +6,7 @@ import {TypeaheadMatch} from "ngx-bootstrap";
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
 
@@ -28,6 +28,15 @@ export class SidebarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.getMenudata();
+  }
+
+  /**
+   * 获取菜单数据
+   */
+  getMenudata() {
+    this.menuData = this.fixedMenu;
+    this.handleMenuData();
   }
 
   /**
