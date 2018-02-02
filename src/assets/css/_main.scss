@@ -1,0 +1,239 @@
+/*****************    全局框架scss  ***********************/
+
+/*边栏宽度--仅在此处定义一次即可*/
+$side_bar_w: 250px;
+.ml-sidebar-w {
+    margin-left: $side_bar_w;
+}
+
+/*****************  内容区域  *********************/
+.demo-contents {
+    background-color: $color-gray-light;
+    margin-top: 60px;
+    padding: 30px;
+}
+
+/*****************  固定头部 **********************/
+.header_nav{
+    padding: 6px 1rem;
+    min-height: 60px;
+}
+
+/*****************  左边栏  ***********************/
+
+/*边栏整体*/
+.demo-sidebar {
+    padding: 0;
+    margin: 0;
+    width: $side_bar_w;
+    //border-right: 1px solid #8a8a8a;
+    &.ng-sidebar--opened.ng-sidebar--over {
+        box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+    }
+}
+
+/*logo height：60*/
+.nav_logo{
+    padding: 5px 1rem;
+    height: 50px;
+}
+
+/*用户头像 height：145*/
+.user-profile {
+    height: 145px;
+    padding-top: 20px;
+    text-align: center;
+    img {
+        width: 88px;
+        height: 88px;
+        -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.03);
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.03);
+        cursor: pointer;
+    }
+    .c-user-profile {
+        margin: 10px;
+        & > span {
+            color: $color-gray-primary;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    }
+    .dropdown-menu {
+        margin-left: 43px;
+        .dropdown-item {
+            height: 35px;
+            line-height: 0px;
+            cursor: pointer;
+        }
+    }
+}
+
+/*菜单搜索 height：35+10*2=58*/
+.search-input {
+    padding: 10px;
+    input {
+        border: 1px solid $gray-lightest;
+    }
+    .dropdown-header {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        color: #898e93;
+    }
+}
+.dropdown-item {
+    padding: 5px 10px;
+    .item {
+        font-size: 0.8rem;
+        width: $side_bar_w - 40px;
+    }
+    .id_lable {
+        width: 12px;
+    }
+}
+
+/*菜单*/
+.c-nav {
+    overflow-y: auto;
+    /*边栏菜单自适应高度*/
+    height: calc(100vh - 60px - 145px - 53px);
+    height: -moz-calc(100vh - 60px - 145px - 53px);
+    height: -webkit-calc(100vh - 60px - 145px - 53px);
+    padding: 10px;
+    font-size: 1rem;
+    .c-search-msg {
+        color: $color-gray-deep;
+    }
+    .c-sidebar-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        a {
+            color: $color-gray-deep;
+            text-decoration: none;
+            border: 0px;
+        }
+        & > li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            & > a {
+                padding: 7px 5px 7px 10px;
+                display: block;
+                border-left: 3px solid transparent;
+                color: $color-gray-deep;
+                border: 0px;
+                &:hover {
+                    color: $color-white;
+                    -webkit-transition: 0.3s;
+                    transition: 0.3s;
+                    -moz-transition: 0.3s;
+                    -webkit-transition: 0.3s;
+                    -o-transition: 0.3s;
+                    cursor: pointer;
+                    filter: alpha(opacity=35);
+                    -moz-opacity: 0.35;
+                    opacity: 0.35;
+                    margin-left: 5px;
+                }
+                & > .fa {
+                    width: 20px;
+                }
+            }
+            & > .c-treeview-menu {
+                margin: 0 1px;
+            }
+        }
+        li {
+            &.active {
+                & > .c-treeview-menu {
+                    display: block;
+                }
+            }
+        }
+        .c-treeview-menu {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-left: 15px;
+            .c-treeview-menu {
+                padding-left: 15px;
+            }
+            & > li {
+                margin: 0;
+                margin-left: 2px;
+                border-left: 1px solid $color-light;
+                padding-left: 5px;
+                & > a {
+                    padding: 7px 5px 7px 10px;
+                    display: block;
+                    color: $color-gray-deep;
+                    border: 0px;
+                    & > .fa {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+.c-nav .c-sidebar-menu .c-treeview-menu > li.active > a, .c-sidebar-menu .c-treeview-menu > li > a:hover {
+    color: $color-white;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    cursor: pointer;
+    filter: alpha(opacity=35);
+    -moz-opacity: 0.35;
+    opacity: 0.35;
+    margin-left: 5px;
+}
+
+/*侧边栏搜索*/
+.c-high-search{
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1000;
+    right: -300px;
+    top: 0px;
+    width: 300px;
+    height: 100%;
+    background-color: $gray-lightest;
+    opacity: 0;
+    .form{
+        padding:15px;
+        label{
+            text-align: right;
+        }
+    }
+}
+
+/*nav展开收起动画*/
+@keyframes sidebaropen
+{
+    0%   {margin-left: 0px;}
+    100% {margin-left: $side_bar_w;}
+}
+@-webkit-keyframes sidebaropen /* Safari 与 Chrome */
+{
+    0%   {margin-left: 0px;}
+    100% {margin-left: $side_bar_w;}
+}
+@keyframes sidebarclose
+{
+    0%   {margin-left: $side_bar_w;}
+    100% {margin-left: 0px;}
+}
+@-webkit-keyframes sidebarclose /* Safari 与 Chrome */
+{
+    0%   {margin-left: $side_bar_w;}
+    100% {margin-left: 0px;}
+}
+.sidebar_o{
+    animation:sidebaropen 0.3s;
+}
+.sidebar_c{
+    animation:sidebarclose 0.3s;
+}
