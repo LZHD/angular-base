@@ -10,7 +10,23 @@ import {TypeaheadMatch} from "ngx-bootstrap";
 })
 export class SidebarComponent implements OnInit {
 
-  private fixedMenu: Array<any> = [];
+  // 固定的菜单信息
+  private fixedMenu = [{
+    "id": "1",
+    "parentId": "0",
+    "name": "经典示例",
+    "keyWord": "toast",
+    "icon": 'fa-wrench',
+    "isExpend": false,
+    "children": [{
+      "id": "2",
+      "parentId": "1",
+      "name": "消息框",
+      "keyWord": "mtk",
+      "icon": 'fa-columns',
+      "url": 'maps'
+    }]
+  }];
   // 菜单数据
   private menuData = [];
   // 显示的菜单数据
@@ -73,6 +89,7 @@ export class SidebarComponent implements OnInit {
       };
       entry.parent = parent;
       // 记录当前路由所对应的节点
+      console.log(entry.url, this.router.url);
       if ('/' + entry.url === this.router.url) {
         this.activeMenu = item;
       }

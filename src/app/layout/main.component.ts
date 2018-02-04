@@ -24,7 +24,7 @@ export class MainComponent implements OnInit {
   private mainData: MainData = {
     userData: {
       userName: "张医生",
-      userHeaderImg: "./assets/img/user-header.png",
+      userHeaderImg: "./assets/img/angular.svg",
       mobilePhone: "1895090***2",
       email: "332557712@qq.com",
       positions: "Java工程师、打杂工程师"

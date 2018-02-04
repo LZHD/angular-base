@@ -25,6 +25,7 @@
     "ag-grid": "^16.0.1",
     "ag-grid-angular": "^16.0.0",
     "ag-grid-enterprise": "^16.0.1",
+    "angular2-baidu-map": "^4.1.0",
     "animate.css": "^3.5.2",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",

@@ -1,16 +1,15 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpModule} from "@angular/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 // 第三方
 import {AgGridModule} from "ag-grid-angular";
 import {SidebarModule} from 'ng-sidebar';
 import {SuiModule} from "ng2-semantic-ui";
-import {Ng2BootstrapModule} from "ng-bootstrap";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {RouterModule} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
-import {BsDropdownModule, CollapseModule, TypeaheadModule} from "ngx-bootstrap";
-import {HttpModule} from "@angular/http";
 
 /**
  * 公共模块
@@ -20,11 +19,7 @@ import {HttpModule} from "@angular/http";
         CommonModule,
         FormsModule,
         RouterModule,
-        HttpModule,
-      NgbModule.forRoot(),
-      CollapseModule.forRoot(),
-      BsDropdownModule.forRoot(),
-      TypeaheadModule.forRoot(),
+        HttpModule
     ],
     declarations: [
     ],
@@ -34,15 +29,15 @@ import {HttpModule} from "@angular/http";
     ],
     exports: [
         BrowserModule,
+        BrowserAnimationsModule,
         CommonModule,
         FormsModule,
         RouterModule,
         ReactiveFormsModule,
         SuiModule,
         NgbModule,
-        Ng2BootstrapModule,
         SidebarModule,
-        AgGridModule,
+        AgGridModule
     ]
 })
 export class SharedModule {
