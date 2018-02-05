@@ -21,7 +21,7 @@ export class SidebarComponent implements OnInit {
     "children": [{
       "id": "2",
       "parentId": "1",
-      "name": "消息框",
+      "name": "地图",
       "keyWord": "mtk",
       "icon": 'fa-map-marker',
       "url": 'maps'
