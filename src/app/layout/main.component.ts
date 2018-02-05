@@ -14,28 +14,13 @@ import {MainData} from "./model/mainModel";
 
 export class MainComponent implements OnInit {
 
-  //切换导航
+  // 切换导航
   private toggleDescTip: string = "点击关闭导航菜单";
-
-  //切换用户信息卡标识
-  private userCardClose: boolean = true;
-
-  //用户数据
-  private mainData: MainData = {
-    userData: {
-      userName: "张医生",
-      userHeaderImg: "./assets/img/angular.svg",
-      mobilePhone: "1895090***2",
-      email: "332557712@qq.com",
-      positions: "Java工程师、打杂工程师"
-    },
-    menuData: null
-  }
 
   private title: string = "首页";
 
 
-  //皮肤
+  // 皮肤
   skins: any = {
     faded: {
       header_bg: "bg-faded navbar-light",
@@ -89,8 +74,6 @@ export class MainComponent implements OnInit {
   };
   skin: string = this.skins.inverse;
   skinNames: string[] = [];
-  //导航展开收起
-  protected isCollapsed: boolean = true;
 
   constructor(private router: Router) {
   }
@@ -111,15 +94,6 @@ export class MainComponent implements OnInit {
     this.skin = this.skins[skin];
   }
 
-  public collapsed(event: any): void {
-    //console.log(event);
-  }
-
-  public expanded(event: any): void {
-    //console.log(event);
-  }
-
-
   /**
    * 初始化
    */
@@ -130,30 +104,6 @@ export class MainComponent implements OnInit {
     window.onresize = function () {
       thisComponent.changeMode();
     };
-  }
-
-
-  /**
-   * 跳转首页
-   */
-  toHome() {
-    this.title = "首页";
-    this.router.navigate(['/']);
-  }
-
-  /**
-   * 头像更换
-   */
-  avatarReplacement() {
-    // this.ngbModalService.open(AvatarCropperComponent, {
-    //   size: 'lg',
-    //   backdrop: 'static',
-    //   keyboard: false
-    // }).result.then((result) => {
-    //
-    // }, (reason) => {
-    //
-    // });
   }
 
   /**

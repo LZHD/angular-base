@@ -27,8 +27,7 @@
       <!--头部logo-->
       <div class="user-profile">
         <div>
-          <img alt="image" class="rounded-circle" [src]="mainData.userData.userHeaderImg"
-               (mouseover)="userCardClose=false" (mouseleave)="userCardClose=true" routerLink="/"/>
+          <img alt="image" class="rounded-circle" src="./assets/img/angular.svg" routerLink="/"/>
         </div>
       </div>
       <!--菜单-->
@@ -49,13 +48,7 @@
 
       <!--激活左边栏-->
       <a class="navbar-brand">
-        <button class="btn btn-sm btn-outline-secondary noboder c-not-shadow"
-                (click)="_toggleOpened();"
-                placement="right" [tooltip]="toggleDescTip">
-          <i class="fa fa-angle-double-left fa-fw fa-2x" [hidden]="!_opened"></i>
-          <i class="fa fa-angle-double-right fa-fw fa-2x" [hidden]="_opened"></i>
-        </button>
-        <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>
+        <button (click)="_toggleOpened()" class="demo-header__toggle" placement="right" [tooltip]="toggleDescTip">Toggle sidebar</button>
       </a>
     </nav>
     <!--页面主体内容区域-->

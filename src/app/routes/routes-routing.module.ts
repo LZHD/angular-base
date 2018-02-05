@@ -15,7 +15,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home',  component: HomeComponent },
-      { path: 'maps',  component: MapsComponent }
+      { path: 'maps',  component: MapsComponent },
+      { path: '**', redirectTo: 'home' }
     ]
   }
 ];
