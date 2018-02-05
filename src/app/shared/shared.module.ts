@@ -7,7 +7,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AgGridModule} from "ag-grid-angular";
 import {SidebarModule} from 'ng-sidebar';
 import {SuiModule} from "ng2-semantic-ui";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {RouterModule} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
 
@@ -35,7 +34,6 @@ import {BrowserModule} from "@angular/platform-browser";
         RouterModule,
         ReactiveFormsModule,
         SuiModule,
-        NgbModule,
         SidebarModule,
         AgGridModule
     ]

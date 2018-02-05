@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
   private fixedMenu = [{
     "id": "1",
     "parentId": "0",
-    "name": "经典示例",
+    "name": "学习示例",
     "keyWord": "toast",
     "icon": 'fa-wrench',
     "isExpend": false,
@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
       "parentId": "1",
       "name": "消息框",
       "keyWord": "mtk",
-      "icon": 'fa-columns',
+      "icon": 'fa-map-marker',
       "url": 'maps'
     }]
   }];

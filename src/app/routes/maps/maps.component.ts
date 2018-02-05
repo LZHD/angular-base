@@ -22,4 +22,7 @@ export class MapsComponent implements OnInit {
   ngOnInit() {
   }
 
+  mapClick(e: any) {
+    console.log(e);
+  }
 }

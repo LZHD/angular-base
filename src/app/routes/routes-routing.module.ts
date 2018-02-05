@@ -8,11 +8,12 @@ import {MapsComponent} from "./maps/maps.component";
  * modules总路由
  */
 const routes: Routes = [
+  { path: '', redirectTo: 'AngularStudy', pathMatch: 'full' },
   {
-    path: '',
+    path: 'AngularStudy',
     component: MainComponent,
     children: [
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home',  component: HomeComponent },
       { path: 'maps',  component: MapsComponent }
     ]

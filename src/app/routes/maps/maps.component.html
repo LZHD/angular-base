@@ -1,1 +1,13 @@
-<baidu-map [options]="options" style="display: block; width: 550px; height: 350px;"></baidu-map>
+<div class="c-content-inner">
+  <div class="c-line-alert">
+    <alert type="info">
+      <strong>信息显示!</strong> 这里显示页面一些固定的动态信息（如果需要的话），不要换行！！
+    </alert>
+  </div>
+  <div style="margin-bottom: 20px">
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+  </div>
+  <baidu-map [options]="options" (clicked)="mapClick($event)"  style="display: block; width: 100%; height: 350px;"></baidu-map>
+</div>
