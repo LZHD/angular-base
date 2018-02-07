@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
       "name": "地图",
       "keyWord": "mtk",
       "icon": 'fa-map-marker',
-      "url": 'maps'
+      "url": 'example/maps'
     }]
   }];
   // 菜单数据

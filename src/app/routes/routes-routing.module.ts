@@ -1,7 +1,6 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-import {MapsComponent} from "./maps/maps.component";
 import {MainComponent} from "../layout/main/main.component";
 
 /**
@@ -15,7 +14,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home',  component: HomeComponent },
-      { path: 'maps',  component: MapsComponent },
+      { path: 'example',  loadChildren: './example/example.module#ExampleModule' },
       { path: '**', redirectTo: 'home' }
     ]
   }
