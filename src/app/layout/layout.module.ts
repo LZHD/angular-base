@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { TreeviewMenuComponent } from './treeview-menu/treeview-menu.component';
-import {SidebarComponent} from "./sidebar/sidebar.component";
-import {MainComponent} from "./main.component";
-import {BsDropdownModule, CollapseModule, TooltipModule, TypeaheadModule} from "ngx-bootstrap";
 import {SharedModule} from "../shared/shared.module";
+import {BsDropdownModule, CollapseModule, TooltipModule, TypeaheadModule} from "ngx-bootstrap";
+import {TreeviewMenuComponent} from "./treeview-menu/treeview-menu.component";
+import {SidebarComponent} from "./sidebar/sidebar.component";
+import {MainComponent} from "./main/main.component";
 
 @NgModule({
   imports: [
@@ -23,6 +23,5 @@ import {SharedModule} from "../shared/shared.module";
     TreeviewMenuComponent,
     SidebarComponent
   ],
-  providers: []
 })
-export class MainModule { }
+export class LayoutModule { }

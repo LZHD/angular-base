@@ -1,8 +1,8 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {MainComponent} from "../layout/main.component";
 import {HomeComponent} from "./home/home.component";
 import {MapsComponent} from "./maps/maps.component";
+import {MainComponent} from "../layout/main/main.component";
 
 /**
  * modules总路由
