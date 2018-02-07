@@ -1,11 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
-import {MainData} from "./model/mainModel";
 
-
-/**
- * 主体组件
- */
 @Component({
   selector: 'app-main',
   styleUrls: ['./main.component.scss'],
@@ -15,9 +10,9 @@ import {MainData} from "./model/mainModel";
 export class MainComponent implements OnInit {
 
   // 切换导航
-  private toggleDescTip: string = "点击关闭导航菜单";
+  private toggleDescTip: String = "点击关闭导航菜单";
 
-  private title: string = "首页";
+  private title: String = "首页";
 
 
   // 皮肤
@@ -65,7 +60,7 @@ export class MainComponent implements OnInit {
       leftbar_header: "bg-inverse"
     },
     inverse: {
-      header_bg: "bg-inverse navbar-inverse",
+      header_bg: "bg-color-deep",
       header_a: "text-white",
       header_btn: "btn-outline-success",
       leftbar_bg: "bg-color-black-secondary",
@@ -74,6 +69,25 @@ export class MainComponent implements OnInit {
   };
   skin: string = this.skins.inverse;
   skinNames: string[] = [];
+
+  // 侧边栏设置
+  private static autoClose_w = 860;
+  private static autoClose_h = 500;
+  private _opened: Boolean = true;
+  private _modeNum: Number = 1;
+  private _positionNum: Number = 0;
+  private _dock: Boolean = false;
+  private _closeOnClickOutside: Boolean = false;
+  private _closeOnClickBackdrop: Boolean = false;
+  private _showBackdrop: Boolean = false;
+  private _animate: Boolean = true;
+  private _trapFocus: Boolean = false;
+  private _autoFocus: Boolean = false;
+  private _keyClose: Boolean = false;
+  private _autoCollapseWidth: Number = MainComponent.autoClose_w;
+  private _autoCollapseHeight: Number = MainComponent.autoClose_h;
+  private _MODES: Array<string> = ['over', 'push', 'slide'];
+  private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
 
   constructor(private router: Router) {
   }
@@ -119,26 +133,6 @@ export class MainComponent implements OnInit {
     // }, (reason) => {
     // });
   }
-
-
-  //侧边栏设置
-  private static autoClose_w = 860;
-  private static autoClose_h = 500;
-  private _opened: boolean = true;
-  private _modeNum: number = 1;
-  private _positionNum: number = 0;
-  private _dock: boolean = false;
-  private _closeOnClickOutside: boolean = false;
-  private _closeOnClickBackdrop: boolean = false;
-  private _showBackdrop: boolean = false;
-  private _animate: boolean = true;
-  private _trapFocus: boolean = false;
-  private _autoFocus: boolean = false;
-  private _keyClose: boolean = false;
-  private _autoCollapseWidth: number = MainComponent.autoClose_w;
-  private _autoCollapseHeight: number = MainComponent.autoClose_h;
-  private _MODES: Array<string> = ['over', 'push', 'slide'];
-  private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
 
   /**
    * 激活/关闭侧边栏

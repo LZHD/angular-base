@@ -3,7 +3,7 @@
     <div class="row c-mt5 c-mb15" [hidden]="userTipClose">
         <div class="col-md-12">
             <div class="card c-card">
-                <div class="card-block">
+                <div class="card-body">
                     <i class="fa fa-bullhorn fa-fw text-danger"></i>
                     <strong class="text-danger">欢迎您，张医生， </strong>
                     <span class="c-home-login-tip">登录【Session ID:
@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card c-card c-home-card">
-                        <div class="card-block">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-9">
                                     <h5 class="card-title c-fs15"><i class="fa fa-bell-o fa-fw"></i> 待办信息</h5>
@@ -75,7 +75,7 @@
             <div class="row  c-mt15">
                 <div class="col-md-12">
                     <div class="card c-card c-home-card">
-                        <div class="card-block">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-9">
                                     <h5 class="card-title c-fs15"><i class="fa fa-bullhorn fa-fw"></i> 系统通知</h5>
@@ -128,7 +128,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card c-card c-home-card">
-                        <div class="card-block">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-9">
                                     <h5 class="card-title c-fs15"><i class="fa fa-envelope-open-o fa-fw"></i> 待阅信息</h5>
@@ -178,7 +178,7 @@
             <div class="row  c-mt15">
                 <div class="col-md-12">
                     <div class="card c-card  c-home-card">
-                        <div class="card-block">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-9">
                                     <h5 class="card-title c-fs15"><i class="fa fa-cubes fa-fw"></i> 常用功能</h5>
@@ -198,7 +198,7 @@
                                             <div class="col-md-3" *ngFor="let obj  of commonFuncLit[i]">
                                                 <div
                                                     class="card card-outline-secondary  text-center c-home-common-func-outline">
-                                                    <div class="card-block c-home-common-func">
+                                                    <div class="c-home-common-func">
                                                         <i class="fa " [ngClass]="obj.icon"></i>
                                                         <span>{{obj.name}}</span>
                                                     </div>
