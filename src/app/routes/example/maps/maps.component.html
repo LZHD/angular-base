@@ -1,13 +1,16 @@
-<div class="c-content-inner">
-  <div class="c-line-alert">
+<div class="c-content">
+  <div>
     <alert type="info">
-      <strong>信息显示!</strong> 这里显示页面一些固定的动态信息（如果需要的话），不要换行！！
+      百度地图
     </alert>
   </div>
-  <div>
-    <button type="button" class="btn btn-outline-primary">Primary</button>
-    <button type="button" class="btn btn-outline-secondary">Secondary</button>
-    <button type="button" class="btn btn-outline-success">Success</button>
+  <div class="c-content-inner container-fluid">
+    <div class="mb-4">
+      <button type="button" class="btn btn-primary" (click)="panTo()">Change Center</button>
+      <button type="button" class="btn btn-secondary" (click)="zoom()">Change Zoom</button>
+      <button type="button" class="btn btn-success" (click)="infoWindow()">new infomation window</button>
+      <button type="button" class="btn btn-default" (click)="all()">all</button>
+    </div>
+    <abm-map #map [options]="options" (ready)="onReady($event)" style="height:500px; border-radius: 10px"></abm-map>
   </div>
-  <abm-map #map [options]="options" (ready)="onReady($event)" style="height:500px;"></abm-map>
 </div>

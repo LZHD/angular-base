@@ -403,10 +403,12 @@ a, a[href], input[type='submit'], input[type='image'], label[for], select, .btn,
     height: 100%;
 }
 
+.c-content {
+  width: 100%;
+}
+
 /*内容区域*/
 .c-content-inner {
-    //background-color: #fffc94;
-    /*内容区域高度自适应*/
     .full_h {
         height: calc(100vh - 120px);
         height: -moz-calc(100vh - 120px);
@@ -486,9 +488,9 @@ sui-select.ng-invalid:not(form) {
 .ng-sidebar__backdrop {
     z-index: 900 !important;
 }
-.fixed-top {
-    z-index: 899 !important;
-}
+//.fixed-top {
+//    z-index: 899 !important;
+//}
 
 //模态框去除圆角
 .ui.modal {

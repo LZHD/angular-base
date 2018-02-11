@@ -89,7 +89,6 @@ export class SidebarComponent implements OnInit {
       };
       entry.parent = parent;
       // 记录当前路由所对应的节点
-      console.log(entry.url, this.router.url);
       if ('/' + entry.url === this.router.url) {
         this.activeMenu = item;
       }
