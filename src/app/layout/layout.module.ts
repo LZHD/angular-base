@@ -4,6 +4,8 @@ import {BsDropdownModule, CollapseModule, TooltipModule, TypeaheadModule} from "
 import {TreeviewMenuComponent} from "./treeview-menu/treeview-menu.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import {MainComponent} from "./main/main.component";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {JasperoConfirmationsModule} from "@jaspero/ng2-confirmations";
 
 @NgModule({
   imports: [
@@ -11,7 +13,10 @@ import {MainComponent} from "./main/main.component";
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     TypeaheadModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+	  BrowserAnimationsModule,
+	  NoopAnimationsModule,
+	  JasperoConfirmationsModule
   ],
   declarations: [
     MainComponent,

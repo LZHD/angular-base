@@ -9,6 +9,7 @@ import {SidebarModule} from 'ng-sidebar';
 import {SuiModule} from "ng2-semantic-ui";
 import {RouterModule} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
+import {GridBaseModule} from "./grid-base/grid-base.module";
 
 /**
  * 公共模块
@@ -35,7 +36,8 @@ import {BrowserModule} from "@angular/platform-browser";
         ReactiveFormsModule,
         SuiModule,
         SidebarModule,
-        AgGridModule
+        AgGridModule,
+        GridBaseModule
     ]
 })
 export class SharedModule {

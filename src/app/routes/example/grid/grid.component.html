@@ -1,0 +1,15 @@
+<div class="c-content">
+  <div>
+    <alert type="info">
+      百度地图
+    </alert>
+  </div>
+  <div class="c-content-inner container-fluid">
+    <app-grid-base (onRowClicked)="rowClick($event)"
+                   [columnDefs]="columnDefs"
+                   [rowData]="rowData"
+                   [sizeColumnsToFit]="true"
+				   [ttars]="ttars"
+    ></app-grid-base>
+  </div>
+</div>

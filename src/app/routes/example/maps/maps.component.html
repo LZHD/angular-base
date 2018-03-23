@@ -6,11 +6,23 @@
   </div>
   <div class="c-content-inner container-fluid">
     <div class="mb-4">
-      <button type="button" class="btn btn-primary" (click)="panTo()">Change Center</button>
-      <button type="button" class="btn btn-secondary" (click)="zoom()">Change Zoom</button>
-      <button type="button" class="btn btn-success" (click)="infoWindow()">new infomation window</button>
-      <button type="button" class="btn btn-default" (click)="all()">all</button>
+      <button type="button" class="btn btn-primary btn-d" (click)="panTo()"><i class="fa fa-plus-circle mr-2"></i>改变中心</button>
+      <button type="button" class="btn btn-secondary" (click)="zoom()">缩放</button>
+      <button type="button" class="btn btn-success" (click)="infoWindow()">添加标记</button>
+      <button type="button" class="btn btn-default" (click)="all()">添加全景</button>
+      <button type="button" class="btn btn-default" (click)="open()">测试</button>
     </div>
     <abm-map #map [options]="options" (ready)="onReady($event)" style="height:500px; border-radius: 10px"></abm-map>
   </div>
 </div>
+
+<ng-template let-context let-modal="modal" #modalTemplate>
+  <div class="header">Example</div>
+  <div class="content">
+    <p>asdfasdf</p>
+  </div>
+  <div class="actions">
+    <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
+    <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+  </div>
+</ng-template>

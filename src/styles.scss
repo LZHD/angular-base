@@ -12,16 +12,20 @@
 @import '../node_modules/bootstrap/scss/bootstrap-reboot.scss';
 
 //ag-grid
+@import "../node_modules/ag-grid/dist/styles/compiled-icons.css";
 @import "../node_modules/ag-grid/dist/styles/ag-grid.css";
-@import "../node_modules/ag-grid/dist/styles/theme-fresh.css";
-@import "../node_modules/ag-grid/dist/styles/theme-blue.css";
-@import "../node_modules/ag-grid/dist/styles/theme-dark.css";
-@import "../node_modules/ag-grid/dist/styles/theme-bootstrap.css";
-@import "../node_modules/ag-grid/dist/styles/theme-material.css";
+@import "../node_modules/ag-grid/dist/styles/ag-theme-blue.css";
+@import "../node_modules/ag-grid/dist/styles/ag-theme-dark.css";
+@import "../node_modules/ag-grid/dist/styles/ag-theme-fresh.css";
+@import "../node_modules/ag-grid/dist/styles/ag-theme-balham.css";
+@import "../node_modules/ag-grid/dist/styles/ag-theme-material.css";
+@import "../node_modules/ag-grid/dist/styles/ag-theme-bootstrap.css";
+@import "../node_modules/ag-grid/dist/styles/ag-theme-balham-dark.css";
 
 //公共样式
 @import './assets/css/common.scss';   // 本系统的一些全局样式变量
 @import './assets/css/main.scss';
 
 //semantic-ui
+//@import url(https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css);
 @import "assets/css/ng2-semantic-ui/semantic.min.css";

@@ -1,0 +1,19 @@
+<div class="card">
+	<div class="card-header" *ngIf="enableTbar">
+		<app-grid-ttar [ttars]="ttars"></app-grid-ttar>
+	</div>
+	<div class="card-body">
+		<ag-grid-angular class="w-100 {{theme}}" style="height: 400px"
+						 [gridOptions]="gridOptions"
+						 [columnDefs]="columnDefs"
+						 [rowData]="rowData"
+						 [rowHeight]="40"
+						 (rowClicked)="rowClick($event)"
+						 (gridReady)="onGridReady($event)"
+						 [toolPanelSuppressSideButtons]="true"
+		></ag-grid-angular>
+	</div>
+	<div class="card-footer" *ngIf="enableBbar">
+		<app-grid-bbar (onThemeChange)="themeChange($event)" (onReLoad)="load($event)"></app-grid-bbar>
+	</div>
+</div>

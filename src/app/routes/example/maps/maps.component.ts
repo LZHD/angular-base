@@ -1,5 +1,6 @@
 import {Component, OnDestroy, ViewChild} from '@angular/core';
 import {AbmComponent} from "angular-baidu-maps";
+import {ModalTemplate, SuiModalService, TemplateModalConfig} from "ng2-semantic-ui";
 
 declare const BMap: any;
 declare const BMAP_SATELLITE_MAP: any;
@@ -16,8 +17,12 @@ export class MapsComponent implements OnDestroy {
   satelliteOptions: any;
   private mapSatellite: any;
   private _map: any;
-  constructor() {
-  }
+
+
+  @ViewChild('modalTemplate')
+  public modalTemplate: ModalTemplate<string, string, string>;
+
+  constructor(public modalService: SuiModalService) {}
 
   onReady(map: any) {
     this._map = map;
@@ -70,6 +75,13 @@ export class MapsComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._map.removeEventListener('click', this._click.bind(this));
+  	if (this._map) {
+		this._map.removeEventListener('click', this._click.bind(this));
+	}
+  }
+
+  open() {
+    const config = new TemplateModalConfig(this.modalTemplate);
+    this.modalService.open(config);
   }
 }
