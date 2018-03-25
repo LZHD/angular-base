@@ -206,7 +206,8 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<h4 class="modal-title pull-left">模板驱动表单</h4>
-							<button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+							<button type="button" class="close pull-right" aria-label="Close"
+									(click)="staticModal.hide()">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
@@ -215,18 +216,22 @@
 								<div class="form-group row">
 									<label class="col-sm-2 col-form-label">姓名</label>
 									<div class="col-sm-4">
-										<input class="form-control" type="text"[(ngModel)]="user.name" name="name" required>
+										<input class="form-control" type="text" [(ngModel)]="user.name" name="name"
+											   required>
 									</div>
 									<label class="col-sm-2 col-form-label">密码</label>
 									<div class="col-sm-4">
-										<input class="form-control" type="text" [(ngModel)]="user.pwd" name="pwd" required>
+										<input class="form-control" type="text" [(ngModel)]="user.pwd" name="pwd"
+											   required>
 									</div>
 								</div>
 							</form>
 						</div>
 						<div class="modal-footer text-right">
 							<button class="btn btn-danger" (click)="staticModal.hide()">取消</button>
-							<button class="btn btn-success" [disabled]="!testForm.valid" (click)="onTemplateSave(staticModal)">保存</button>
+							<button class="btn btn-success" [disabled]="!testForm.valid"
+									(click)="onTemplateSave(staticModal)">保存
+							</button>
 						</div>
 					</div>
 				</div>
@@ -241,7 +246,8 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<h4 class="modal-title pull-left">模型驱动表单</h4>
-							<button type="button" class="close pull-right" aria-label="Close" (click)="staticModal1.hide()">
+							<button type="button" class="close pull-right" aria-label="Close"
+									(click)="staticModal1.hide()">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
@@ -250,7 +256,8 @@
 								<div class="form-group row">
 									<label class="col-sm-1 col-form-label">姓名</label>
 									<div class="col-sm-4">
-										<input class="form-control" type="text" formControlName="name" id="name" required>
+										<input class="form-control" type="text" formControlName="name" id="name"
+											   required>
 									</div>
 									<label class="col-sm-1 col-form-label">密码</label>
 									<div class="col-sm-4">
@@ -261,7 +268,9 @@
 						</div>
 						<div class="modal-footer text-right">
 							<button class="btn btn-danger" (click)="staticModal1.hide()">取消</button>
-							<button class="btn btn-success" [disabled]="!form.valid" (click)="onModelSave(staticModal1)">保存</button>
+							<button class="btn btn-success" [disabled]="!form.valid"
+									(click)="onModelSave(staticModal1)">保存
+							</button>
 						</div>
 					</div>
 				</div>

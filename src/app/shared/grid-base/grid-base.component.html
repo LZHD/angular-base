@@ -11,9 +11,16 @@
 						 (rowClicked)="rowClick($event)"
 						 (gridReady)="onGridReady($event)"
 						 [toolPanelSuppressSideButtons]="true"
+						 [paginationPageSize]="10"
+						 [pagination]="!serverPage"
+						 [suppressPaginationPanel]="true"
 		></ag-grid-angular>
 	</div>
 	<div class="card-footer" *ngIf="enableBbar">
-		<app-grid-bbar (onThemeChange)="themeChange($event)" (onReLoad)="load($event)"></app-grid-bbar>
+		<app-grid-bbar (onThemeChange)="themeChange($event)"
+					   (onReLoad)="load($event)"
+					   [serverPage]="serverPage"
+					   [gridApi]="gridApi"
+		></app-grid-bbar>
 	</div>
 </div>

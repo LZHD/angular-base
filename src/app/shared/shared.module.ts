@@ -15,30 +15,27 @@ import {GridBaseModule} from "./grid-base/grid-base.module";
  * 公共模块
  */
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        RouterModule,
-        HttpModule
-    ],
-    declarations: [
-    ],
-    providers: [
-    ],
-    entryComponents: [
-    ],
-    exports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        CommonModule,
-        FormsModule,
-        RouterModule,
-        ReactiveFormsModule,
-        SuiModule,
-        SidebarModule,
-        AgGridModule,
-        GridBaseModule
-    ]
+	imports: [
+		CommonModule,
+		FormsModule,
+		RouterModule,
+		HttpModule
+	],
+	declarations: [],
+	providers: [],
+	entryComponents: [],
+	exports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		CommonModule,
+		FormsModule,
+		RouterModule,
+		ReactiveFormsModule,
+		SuiModule,
+		SidebarModule,
+		AgGridModule,
+		GridBaseModule
+	]
 })
 export class SharedModule {
 }

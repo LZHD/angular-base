@@ -1,63 +1,64 @@
 <ng-sidebar-container>
 
-  <!--左边栏-->
-  <ng-sidebar
-    [(opened)]="_opened"
-    [mode]="_MODES[_modeNum]"
-    [keyClose]="_keyClose"
-    [position]="_POSITIONS[_positionNum]"
-    [dock]="_dock"
-    [dockedSize]="'50px'"
-    [autoCollapseHeight]="_autoCollapseHeight"
-    [autoCollapseWidth]="_autoCollapseWidth"
-    [closeOnClickOutside]="_closeOnClickOutside"
-    [closeOnClickBackdrop]="_closeOnClickBackdrop"
-    [showBackdrop]="_showBackdrop"
-    [animate]="_animate"
-    [trapFocus]="_trapFocus"
-    [autoFocus]="_autoFocus"
-    [sidebarClass]="'demo-sidebar'"
-    [ariaLabel]="'My sidebar'"
-    (onOpenStart)="_onOpenStart()"
-    (onOpened)="_onOpened()"
-    (onCloseStart)="_onCloseStart()"
-    (onClosed)="_onClosed()">
+	<!--左边栏-->
+	<ng-sidebar
+		[(opened)]="_opened"
+		[mode]="_MODES[_modeNum]"
+		[keyClose]="_keyClose"
+		[position]="_POSITIONS[_positionNum]"
+		[dock]="_dock"
+		[dockedSize]="'50px'"
+		[autoCollapseHeight]="_autoCollapseHeight"
+		[autoCollapseWidth]="_autoCollapseWidth"
+		[closeOnClickOutside]="_closeOnClickOutside"
+		[closeOnClickBackdrop]="_closeOnClickBackdrop"
+		[showBackdrop]="_showBackdrop"
+		[animate]="_animate"
+		[trapFocus]="_trapFocus"
+		[autoFocus]="_autoFocus"
+		[sidebarClass]="'demo-sidebar'"
+		[ariaLabel]="'My sidebar'"
+		(onOpenStart)="_onOpenStart()"
+		(onOpened)="_onOpened()"
+		(onCloseStart)="_onCloseStart()"
+		(onClosed)="_onClosed()">
 
-    <div [ngClass]="skin.leftbar_bg">
-      <!--头部logo-->
-      <div class="user-profile">
-        <div>
-          <img alt="image" class="rounded-circle" src="./assets/img/angular.svg" routerLink="/"/>
-        </div>
-      </div>
-      <!--菜单-->
-      <app-sidebar></app-sidebar>
-    </div>
+		<div [ngClass]="skin.leftbar_bg">
+			<!--头部logo-->
+			<div class="user-profile">
+				<div>
+					<img alt="image" class="rounded-circle" src="./assets/img/angular.svg" routerLink="/"/>
+				</div>
+			</div>
+			<!--菜单-->
+			<app-sidebar></app-sidebar>
+		</div>
 
-  </ng-sidebar>
+	</ng-sidebar>
 
-  <!--页面右侧-->
-  <div ng-sidebar-content>
-    <!--页面头部-->
-    <nav class="navbar fixed-top header_nav"
-         [class.sidebar_o]="_opened && _modeNum == 1"
-         [class.ml-sidebar-w]="_opened && _modeNum == 1"
-         [class.sidebar_c]="!_opened  || _modeNum == 0"
-         [class.ml-0]="!_opened || _modeNum == 0"
-         [ngClass]="skin.header_bg">
+	<!--页面右侧-->
+	<div ng-sidebar-content>
+		<!--页面头部-->
+		<nav class="navbar fixed-top header_nav"
+			 [class.sidebar_o]="_opened && _modeNum == 1"
+			 [class.ml-sidebar-w]="_opened && _modeNum == 1"
+			 [class.sidebar_c]="!_opened  || _modeNum == 0"
+			 [class.ml-0]="!_opened || _modeNum == 0"
+			 [ngClass]="skin.header_bg">
 
-      <!--激活左边栏-->
-      <a class="navbar-brand">
-        <button (click)="_toggleOpened()" class="demo-header__toggle" placement="right" [tooltip]="toggleDescTip">Toggle sidebar</button>
-      </a>
-    </nav>
-    <!--页面主体内容区域-->
-    <div class="main-contents">
-      <section class="demo-contents">
-        <router-outlet></router-outlet>
-		  <jaspero-confirmations></jaspero-confirmations>
-      </section>
-    </div>
-  </div>
+			<!--激活左边栏-->
+			<a class="navbar-brand">
+				<button (click)="_toggleOpened()" class="demo-header__toggle" placement="right"
+						[tooltip]="toggleDescTip">Toggle sidebar
+				</button>
+			</a>
+		</nav>
+		<!--页面主体内容区域-->
+		<div class="main-contents">
+			<section class="demo-contents">
+				<router-outlet></router-outlet>
+			</section>
+		</div>
+	</div>
 
 </ng-sidebar-container>

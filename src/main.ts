@@ -29,7 +29,7 @@ const appBootstrap = () => {
 
 const bootstrap = () => {
   return platformBrowserDynamic().bootstrapModule(AppModule, {
-    defaultEncapsulation: ViewEncapsulation.None,
+    // defaultEncapsulation: ViewEncapsulation.None,
     preserveWhitespaces: false
   });
 };

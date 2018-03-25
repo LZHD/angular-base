@@ -1,37 +1,41 @@
 <div class="form-inline pr-3">
-  <sui-select placeholder="主题" class="pr-3"
-              [(ngModel)]="theme"
-              [options]="themes"
-              (ngModelChange)="themeChange($event)"
-              #themeSelect>
-    <sui-select-option *ngFor="let item of themeSelect.availableOptions" [value]="item"></sui-select-option>
-  </sui-select>
-  <sui-select placeholder="条数"
-              *ngIf="!disabledLimit"
-              [isDisabled]="disabledLimit"
-              [(ngModel)]="pageParams.size"
-              (ngModelChange)="limitChange($event)"
-              [options]="limits"
-              #limitSelect>
-    <sui-select-option *ngFor="let item of limitSelect.availableOptions" [value]="item"></sui-select-option>
-  </sui-select>
-  <span class="ml-2" *ngIf="!disabledLimit">条/页</span>
-  <form class="form-inline position-absolute" style="right: 1rem">
-    <button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.first" (click)="pager('first')">
-      << 首页
-    </button>
-    <button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.first" (click)="pager('previous')">
-      上一页
-    </button>
-    <span class="p-2" *ngIf="pageParams.totalElements !== 0">
+	<sui-select placeholder="主题" class="pr-3"
+				[(ngModel)]="theme"
+				[options]="themes"
+				(ngModelChange)="themeChange($event)"
+				#themeSelect>
+		<sui-select-option *ngFor="let item of themeSelect.availableOptions" [value]="item"></sui-select-option>
+	</sui-select>
+	<sui-select placeholder="条数"
+				*ngIf="!disabledLimit"
+				[isDisabled]="disabledLimit"
+				[(ngModel)]="pageParams.size"
+				(ngModelChange)="limitChange($event)"
+				[options]="limits"
+				#limitSelect>
+		<sui-select-option *ngFor="let item of limitSelect.availableOptions" [value]="item"></sui-select-option>
+	</sui-select>
+	<span class="ml-2" *ngIf="!disabledLimit">条/页</span>
+	<form class="form-inline position-absolute" style="right: 1rem">
+		<button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.first"
+				(click)="pager('first')">
+			<< 首页
+		</button>
+		<button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.first"
+				(click)="pager('previous')">
+			上一页
+		</button>
+		<span class="p-2" *ngIf="pageParams.totalElements !== 0">
         {{pageParams.number+1}}页 / {{pageParams.totalPages}}页
         </span>
 
-    <button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.last" (click)="pager('next')">
-      下一页
-    </button>
-    <button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.last" (click)="pager('last')">
-      末页 >>
-    </button>
-  </form>
+		<button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.last"
+				(click)="pager('next')">
+			下一页
+		</button>
+		<button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.last"
+				(click)="pager('last')">
+			末页 >>
+		</button>
+	</form>
 </div>
