@@ -10,6 +10,7 @@ import {SuiModule} from "ng2-semantic-ui";
 import {RouterModule} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
 import {GridBaseModule} from "./grid-base/grid-base.module";
+import {ToastModule} from "./toast/toast.module";
 
 /**
  * 公共模块
@@ -34,7 +35,8 @@ import {GridBaseModule} from "./grid-base/grid-base.module";
 		SuiModule,
 		SidebarModule,
 		AgGridModule,
-		GridBaseModule
+		GridBaseModule,
+		ToastModule
 	]
 })
 export class SharedModule {

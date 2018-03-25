@@ -1,12 +1,13 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {GridBaseComponent} from "../../../shared/grid-base/grid-base.component";
 import {Ttars} from "../../../shared/grid-base/model/GridbaseModel";
-import {ConfirmationService} from "@jaspero/ng2-confirmations";
+import {ToastService} from "../../../shared/toast/toast.service";
 
 @Component({
 	selector: 'app-grid',
 	templateUrl: './grid.component.html',
-	styleUrls: ['./grid.component.scss']
+	styleUrls: ['./grid.component.scss'],
+	providers: [ToastService]
 })
 export class GridComponent implements OnInit, AfterViewInit {
 	protected columnDefs: object[];
@@ -15,7 +16,7 @@ export class GridComponent implements OnInit, AfterViewInit {
 	@ViewChild(GridBaseComponent)
 	private grid: GridBaseComponent;
 
-	constructor(private _confirmation: ConfirmationService) {
+	constructor(private toastService: ToastService) {
 		this.columnDefs = [
 			{headerName: "Make", field: "make", width: 300},
 			{headerName: "Model", field: "model", width: 300},
@@ -63,9 +64,6 @@ export class GridComponent implements OnInit, AfterViewInit {
 	}
 
 	create = () => {
-		this._confirmation.create('请确认', '确定删除?', {
-			confirmText: '确定',
-			declineText: '取消'
-		});
+		this.toastService.confirm('确定删除?').subscribe(res => res.resolved ? this.toastService.error('sdfaasd') : this.toastService.error('sdfaasd'));
 	}
 }
