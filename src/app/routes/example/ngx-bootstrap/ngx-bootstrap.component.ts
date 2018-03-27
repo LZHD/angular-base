@@ -2,6 +2,8 @@ import {Component, OnInit, SecurityContext, TemplateRef, ViewChild} from '@angul
 import {DomSanitizer} from "@angular/platform-browser";
 import {AlertComponent, AlertConfig, BsModalRef, BsModalService} from "ngx-bootstrap";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {ToastConfig, ToastType} from "../../../shared/toast/model/toast-model";
+import {ToastService} from "../../../shared/toast/service/toast.service";
 
 export function getAlertConfig(): AlertConfig {
 	return Object.assign(new AlertConfig(), {type: 'success'});
@@ -80,7 +82,7 @@ export class NgxBootstrapComponent implements OnInit {
 	@ViewChild('template1')
 	private template1: TemplateRef<any>;
 
-	constructor(sanitizer: DomSanitizer, private modalService: BsModalService, private fb: FormBuilder) {
+	constructor(sanitizer: DomSanitizer, private modalService: BsModalService, private fb: FormBuilder, private toastService: ToastService) {
 		this.alerts1 = this.alerts1.map((alert: any) => ({
 			type: alert.type,
 			msg: sanitizer.sanitize(SecurityContext.HTML, alert.msg)
@@ -142,6 +144,11 @@ export class NgxBootstrapComponent implements OnInit {
 	onModelSave(modal) {
 		console.log('Model Submit Result:', this.form.value, modal);
 		modal.hide();
+	}
+
+	openInfo() {
+		const toastCfg = new ToastConfig(ToastType.INFO, '这是一条INFO消息!', '', 3000);
+		this.toastService.toast(toastCfg);
 	}
 
 }

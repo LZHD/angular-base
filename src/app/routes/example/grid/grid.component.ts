@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {GridBaseComponent} from "../../../shared/grid-base/grid-base.component";
 import {Ttars} from "../../../shared/grid-base/model/GridbaseModel";
-import {ToastService} from "../../../shared/toast/toast.service";
+import {ToastService} from "../../../shared/toast/service/toast.service";
 
 @Component({
 	selector: 'app-grid',
@@ -64,6 +64,6 @@ export class GridComponent implements OnInit, AfterViewInit {
 	}
 
 	create = () => {
-		this.toastService.confirm('确定删除?').subscribe(res => res.resolved ? this.toastService.error('sdfaasd') : this.toastService.error('sdfaasd'));
+		this.toastService.confirm('确定删除?').subscribe(res => res.resolved ? this.toastService.notifyError('sdfaasd') : this.toastService.notifyError('sdfaasd'));
 	}
 }

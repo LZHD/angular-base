@@ -4,6 +4,7 @@ import {SharedModule} from "./shared/shared.module";
 import {RoutesModule} from "./routes/routes.module";
 import {LayoutModule} from "./layout/layout.module";
 import {JasperoConfirmationsModule} from "@jaspero/ng2-confirmations";
+import {ToastModule} from "./shared/toast/toast.module";
 
 @NgModule({
 	declarations: [
@@ -13,7 +14,8 @@ import {JasperoConfirmationsModule} from "@jaspero/ng2-confirmations";
 		LayoutModule,
 		SharedModule,
 		RoutesModule,
-		JasperoConfirmationsModule
+		JasperoConfirmationsModule,
+		ToastModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

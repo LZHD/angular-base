@@ -1,0 +1,14 @@
+$c-toast-box: 1px 1px 3px rgba(100, 100, 100, 0.3) !default;
+.c-toast {
+	border: 0px;
+	-webkit-box-shadow: $c-toast-box;
+	box-shadow: $c-toast-box;
+	-moz-box-shadow: $c-toast-box;
+	border-radius: 5px;
+
+}
+
+
+
+
+
