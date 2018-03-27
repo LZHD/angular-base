@@ -12,8 +12,6 @@ import {GridBaseModule} from "../../shared/grid-base/grid-base.module";
 import {NgxBootstrapComponent} from './ngx-bootstrap/ngx-bootstrap.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
-import {JasperoConfirmationsModule} from "@jaspero/ng2-confirmations";
 
 @NgModule({
 	imports: [

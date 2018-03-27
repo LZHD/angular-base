@@ -276,5 +276,25 @@
 				</div>
 			</div>
 		</div>
+		<div class="card-body">
+			<img src="../../../../assets/img/1.jpg" alt="测试图片1" class="w-25 mr-auto boximg" (click)="openModal1($event, template1)">
+			<img src="../../../../assets/img/2.jpg" alt="测试图片1" class="w-25 mr-auto boximg" (click)="openModal1($event, template1)">
+			<img src="../../../../assets/img/3.jpg" alt="测试图片1" class="w-25 mr-auto boximg" (click)="openModal1($event, template1)">
+			<ng-template #template1>
+				<div class="modal-header">
+					<h4 class="modal-title pull-left">浏览图片</h4>
+					<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<carousel [interval] = "false">
+						<slide *ngFor="let item of imgs">
+							<img src="{{item.src}}" alt="{{item.alt}}">
+						</slide>
+					</carousel>
+				</div>
+			</ng-template>
+		</div>
 	</div>
 </div>

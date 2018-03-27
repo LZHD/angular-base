@@ -1,4 +1,4 @@
-import {Component, OnInit, SecurityContext, TemplateRef} from '@angular/core';
+import {Component, OnInit, SecurityContext, TemplateRef, ViewChild} from '@angular/core';
 import {DomSanitizer} from "@angular/platform-browser";
 import {AlertComponent, AlertConfig, BsModalRef, BsModalService} from "ngx-bootstrap";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
@@ -75,6 +75,10 @@ export class NgxBootstrapComponent implements OnInit {
 	};
 	user: object = {};
 	form: FormGroup;
+	imgs: NodeListOf<Element>;
+	activeSlideIndex: number = 0;
+	@ViewChild('template1')
+	private template1: TemplateRef<any>;
 
 	constructor(sanitizer: DomSanitizer, private modalService: BsModalService, private fb: FormBuilder) {
 		this.alerts1 = this.alerts1.map((alert: any) => ({
@@ -118,6 +122,15 @@ export class NgxBootstrapComponent implements OnInit {
 
 	openModal(template: TemplateRef<any>) {
 		this.modalRef = this.modalService.show(template, {
+			ignoreBackdropClick: true
+		});
+	}
+
+	openModal1(img) {
+		this.imgs = document.querySelectorAll('.boximg');
+		const imgsArray = Array.from(this.imgs);
+		// this.activeSlideIndex = imgsArray.indexOf(img.path[0]);
+		this.modalRef = this.modalService.show(this.template1, {
 			ignoreBackdropClick: true
 		});
 	}
