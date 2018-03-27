@@ -74,6 +74,7 @@ export class NgxBootstrapComponent implements OnInit {
 	modalRef: BsModalRef;
 	config: object = {
 		ignoreBackdropClick: true,
+		animated: true
 	};
 	user: object = {};
 	form: FormGroup;
@@ -123,18 +124,14 @@ export class NgxBootstrapComponent implements OnInit {
 	}
 
 	openModal(template: TemplateRef<any>) {
-		this.modalRef = this.modalService.show(template, {
-			ignoreBackdropClick: true
-		});
+		this.modalRef = this.modalService.show(template, this.config);
 	}
 
 	openModal1(img) {
 		this.imgs = document.querySelectorAll('.boximg');
 		const imgsArray = Array.from(this.imgs);
 		// this.activeSlideIndex = imgsArray.indexOf(img.path[0]);
-		this.modalRef = this.modalService.show(this.template1, {
-			ignoreBackdropClick: true
-		});
+		this.modalRef = this.modalService.show(this.template1, this.config);
 	}
 
 	onTemplateSave(modal) {
