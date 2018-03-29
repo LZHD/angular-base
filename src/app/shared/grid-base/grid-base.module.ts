@@ -25,7 +25,8 @@ LicenseManager.setLicenseKey('you keys'); // 注册专业版
 		GridTtarComponent
 	],
 	exports: [
-		GridBaseComponent
+		GridBaseComponent,
+		GridTtarComponent
 	]
 })
 export class GridBaseModule {
