@@ -29,8 +29,8 @@ export class GridComponent implements OnInit, AfterViewInit {
 			{make: "Porsche", model: "Boxter", price: 72000}
 		];
 		this.ttars = [
-			{name: '新增', cls: 'btn-success', iconCls: 'fa fa-plus-circle mr-2', onClick: this.create},
-			{name: '删除', cls: 'btn-danger', iconCls: 'fa fa-plus-circle mr-2', onClick: this.test},
+			{name: '新增', cls: 'btn-success', iconCls: 'fa fa-plus-square-o mr-2', onClick: this.create},
+			{name: '删除', cls: 'btn-danger', iconCls: 'fa fa-trash mr-2', onClick: this.test},
 			{name: '修改', cls: 'btn-dark', iconCls: 'fa fa-plus-circle mr-2', onClick: this.test},
 			{name: '详情', cls: 'btn-success', iconCls: 'fa fa-plus-circle mr-2', onClick: this.test}
 		];

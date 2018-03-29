@@ -4,6 +4,7 @@ import {BsDropdownModule, CollapseModule, TooltipModule, TypeaheadModule} from "
 import {TreeviewMenuComponent} from "./treeview-menu/treeview-menu.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import {MainComponent} from "./main/main.component";
+import {HeaderFullScreenComponent} from "./fullscreen.component";
 
 @NgModule({
 	imports: [
@@ -16,7 +17,8 @@ import {MainComponent} from "./main/main.component";
 	declarations: [
 		MainComponent,
 		TreeviewMenuComponent,
-		SidebarComponent
+		SidebarComponent,
+		HeaderFullScreenComponent
 	],
 	exports: [
 		MainComponent,
