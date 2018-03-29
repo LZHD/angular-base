@@ -24,21 +24,21 @@ export class SidebarComponent implements OnInit {
 			"name": "地图",
 			"keyWord": "mtk",
 			"icon": 'fa-map-marker',
-			"url": 'example/maps'
+			"url": '/example/maps'
 		}, {
 			"id": "2",
 			"parentId": "1",
 			"name": "表格",
 			"keyWord": "grid",
 			"icon": 'fa-grid',
-			"url": 'example/grid'
+			"url": '/example/grid'
 		}, {
 			"id": "3",
 			"parentId": "1",
 			"name": "ngx-bootstrap",
 			"keyWord": "ngx",
 			"icon": 'fa-bootstrap',
-			"url": 'example/ngx-bootstrap'
+			"url": '/example/ngx-bootstrap'
 		}]
 	}];
 	// 菜单数据
