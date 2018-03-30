@@ -8,7 +8,7 @@ import {CollapseModule} from "ngx-bootstrap";
 	imports: [
 		SharedModule,
 		RoutesRoutingModule,
-		CollapseModule.forRoot(),
+		CollapseModule.forRoot()
 	],
 	declarations: [
 		HomeComponent

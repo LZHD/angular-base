@@ -8,8 +8,7 @@ import {ToastModule} from "./shared/toast/toast.module";
 import {StartupService} from "./core/startup/startup.service";
 import {CoreModule} from "./core/core.module";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {DefaultInterceptorService} from "./core/net/defaultInterceptor.service";
-import {HttpInterceptorModule} from "ng-http-interceptor";
+import {DefaultInterceptor} from "./core/net/default-interceptor";
 
 export function StartupServiceFactory(startupService: StartupService): Function {
 	return () => startupService.load();
@@ -20,7 +19,6 @@ export function StartupServiceFactory(startupService: StartupService): Function 
 		AppComponent
 	],
 	imports: [
-		HttpInterceptorModule,
 		CoreModule,
 		LayoutModule,
 		SharedModule,
@@ -31,7 +29,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
 	providers: [
 		{
 			provide: HTTP_INTERCEPTORS,
-			useClass: DefaultInterceptorService,
+			useClass: DefaultInterceptor,
 			multi: true
 		},
 		StartupService,

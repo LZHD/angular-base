@@ -11,6 +11,7 @@ import {RouterModule} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
 import {GridBaseModule} from "./grid-base/grid-base.module";
 import {ToastModule} from "./toast/toast.module";
+import {HttpClientModule} from "@angular/common/http";
 
 /**
  * 公共模块
@@ -20,7 +21,8 @@ import {ToastModule} from "./toast/toast.module";
 		CommonModule,
 		FormsModule,
 		RouterModule,
-		HttpModule
+		HttpModule,
+		HttpClientModule
 	],
 	declarations: [],
 	providers: [],
