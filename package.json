@@ -31,6 +31,7 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
+    "ng-http-interceptor": "^4.0.0",
     "ng-sidebar": "^6.0.5",
     "ng2-semantic-ui": "^0.9.7",
     "ngx-bootstrap": "^2.0.3",
