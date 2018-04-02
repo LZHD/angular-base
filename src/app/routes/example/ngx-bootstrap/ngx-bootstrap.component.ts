@@ -1,4 +1,4 @@
-import {Component, OnInit, SecurityContext, TemplateRef, ViewChild} from '@angular/core';
+import {Component, OnInit, SecurityContext, TemplateRef, ViewChild, ViewEncapsulation} from '@angular/core';
 import {DomSanitizer} from "@angular/platform-browser";
 import {AlertComponent, AlertConfig, BsModalRef, BsModalService} from "ngx-bootstrap";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
@@ -16,7 +16,8 @@ export function getAlertConfig(): AlertConfig {
 	providers: [{
 		provide: AlertConfig,
 		useFactory: getAlertConfig
-	}]
+	}],
+	encapsulation: ViewEncapsulation.None
 })
 export class NgxBootstrapComponent implements OnInit {
 	dismissible = true;

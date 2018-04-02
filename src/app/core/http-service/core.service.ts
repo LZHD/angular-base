@@ -3,7 +3,7 @@ import {HttpClientService} from "../../shared/http-client/http-client.service";
 import {HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {of} from "rxjs/observable/of";
-import {catchError, map} from "rxjs/operators";
+import {catchError} from "rxjs/operators";
 import {ToastService} from "../../shared/toast/service/toast.service";
 
 @Injectable()
@@ -63,6 +63,15 @@ export class CoreService {
 		}).pipe(
 			catchError(this.handleError())
 		);
+	}
+
+	// 取得要操作的ID数组
+	getIdsFormList(list: any[]): number[] {
+		const _ids = [];
+		for (const model of list) {
+			_ids.push(model.id);
+		}
+		return _ids;
 	}
 
 	private handleError<T>(operation = 'operation', result?: T) {

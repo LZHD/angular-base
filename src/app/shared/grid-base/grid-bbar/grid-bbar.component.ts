@@ -39,7 +39,7 @@ export class GridBbarComponent implements OnInit {
 		return {
 			$limit: this.pageParams.size,
 			$page: this.pageParams.number
-		}
+		};
 	}
 
 	protected themeChange(theme: string) {
