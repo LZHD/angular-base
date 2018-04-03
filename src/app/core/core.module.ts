@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { throwIfAlreadyLoaded } from './module-import-guard';
-import {CoreService} from "./http-service/core.service";
+import {CoreService} from "./service/core.service";
 import {HttpClientService} from "../shared/http-client/http-client.service";
 
 @NgModule({

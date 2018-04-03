@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {CoreService} from "../../../core/http-service/core.service";
+import {CoreService} from "../../../core/service/core.service";
 
 @Injectable()
 export class GridService {
