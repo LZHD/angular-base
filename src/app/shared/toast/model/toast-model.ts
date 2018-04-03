@@ -17,7 +17,7 @@ export class ToastConfig {
    dismissable: boolean;
 
 
-  constructor(toastType: ToastType, textStrong: string = '', text: string = '', autoDismissTime = 0, dismissable = true) {
+  constructor(toastType: ToastType, textStrong: string = '', text: string = '', autoDismissTime = 3000, dismissable = true) {
     this.toastType = toastType;
     this.text = text;
     this.textStrong = textStrong;
