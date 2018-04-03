@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ConfirmationService} from "@jaspero/ng2-confirmations";
 import {ConfirmSettings} from "@jaspero/ng2-confirmations/src/interfaces/confirm-settings";
-import {NotifyService} from "ngx-notify";
 import {Subject} from "rxjs/Subject";
 import {ToastConfig, ToastType} from "../model/toast-model";
 import {Observable} from "rxjs/Observable";
@@ -14,7 +13,7 @@ export class ToastService {
 	private title: string = '操作提示';
 	private toastSubject = new Subject<ToastConfig>();
 
-	constructor(private confirmService: ConfirmationService, private notifyService: NotifyService) {
+	constructor(private confirmService: ConfirmationService) {
 	}
 
 	getToasts(): Observable<ToastConfig> {
@@ -41,26 +40,6 @@ export class ToastService {
 
 	error(content: string) {
 		this.toast(new ToastConfig(ToastType.ERROR, content));
-	}
-
-	notifyInfo(content: string) {
-		this.notifyService.info(this.title, content);
-	}
-
-	notifySuccess(content: string) {
-		this.notifyService.info(this.title, content);
-	}
-
-	notifyError(content: string) {
-		this.notifyService.error(this.title, content);
-	}
-
-	notifyWarn(content: string) {
-		this.notifyService.info(this.title, content);
-	}
-
-	notifyHtml(content: string, html?: string) {
-		this.notifyService.html(this.title, content, html);
 	}
 
 	confirm(content: string, title?: string, textCfg?: ConfirmSettings) {

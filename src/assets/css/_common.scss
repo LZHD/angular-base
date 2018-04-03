@@ -488,9 +488,9 @@ sui-select.ng-invalid:not(form) {
 .ng-sidebar__backdrop {
     z-index: 900 !important;
 }
-//.fixed-top {
-//    z-index: 899 !important;
-//}
+.fixed-top {
+    z-index: 899 !important;
+}
 
 //模态框去除圆角
 .ui.modal {

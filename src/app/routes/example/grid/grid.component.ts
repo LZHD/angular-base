@@ -64,6 +64,6 @@ export class GridComponent implements OnInit, AfterViewInit {
 	}
 
 	create = () => {
-		this.toastService.confirm('确定删除?').subscribe(res => res.resolved ? this.toastService.notifyError('sdfaasd') : this.toastService.notifyError('sdfaasd'));
+		this.toastService.confirm('确定删除?').subscribe(res => res.resolved ? this.toastService.error('sdfaasd') : this.toastService.error('sdfaasd'));
 	}
 }
