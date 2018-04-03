@@ -3,7 +3,9 @@ import {HttpClient} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {ToastService} from "../../shared/toast/service/toast.service";
 
-
+export function StartupServiceFactory(startupService: StartupService): Function {
+	return () => startupService.load();
+}
 /**
  * 用于应用启动时
  * 一般用来获取应用所需要的基础数据等

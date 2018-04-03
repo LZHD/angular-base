@@ -5,14 +5,10 @@ import {RoutesModule} from "./routes/routes.module";
 import {LayoutModule} from "./layout/layout.module";
 import {JasperoConfirmationsModule} from "@jaspero/ng2-confirmations";
 import {ToastModule} from "./shared/toast/toast.module";
-import {StartupService} from "./core/startup/startup.service";
+import {StartupService, StartupServiceFactory} from "./core/startup/startup.service";
 import {CoreModule} from "./core/core.module";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {DefaultInterceptor} from "./core/net/default-interceptor";
-
-export function StartupServiceFactory(startupService: StartupService): Function {
-	return () => startupService.load();
-}
 
 @NgModule({
 	declarations: [
