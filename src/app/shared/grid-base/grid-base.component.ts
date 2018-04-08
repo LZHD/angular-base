@@ -15,8 +15,8 @@ import {GridService} from "./service/grid-base.service";
 	]
 })
 export class GridBaseComponent implements OnInit {
-	private gridApi;
-	private gridColumnApi;
+	protected gridApi;
+	protected gridColumnApi;
 	private queryParams = null;
 	@Input() public gridOptions: GridOptions = this.getDefaultSetting();
 	@Input() public columnDefs: object[];

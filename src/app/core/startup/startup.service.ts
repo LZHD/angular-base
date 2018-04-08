@@ -42,7 +42,7 @@ export class StartupService {
     	const submitData = {};
     	const url = '';
 
-    	this.http.post(url, submitData).pipe(
+    	this.http.get('assets/user.json').pipe(
             catchError((userData) => {
 				resolve(null);
 				return userData;
