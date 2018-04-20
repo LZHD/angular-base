@@ -12,6 +12,8 @@ import {GridBaseModule} from "../../shared/grid-base/grid-base.module";
 import {NgxBootstrapComponent} from './ngx-bootstrap/ngx-bootstrap.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { TreeComponent } from './tree/tree.component';
+import {TreeModule} from "angular-tree-component";
 
 @NgModule({
 	imports: [
@@ -39,12 +41,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 		GridBaseModule,
 		CommonModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		TreeModule
 	],
 	declarations: [
 		MapsComponent,
 		GridComponent,
-		NgxBootstrapComponent
+		NgxBootstrapComponent,
+		TreeComponent
 	]
 })
 export class ExampleModule {

@@ -39,6 +39,13 @@ export class SidebarComponent implements OnInit {
 			"keyWord": "ngx",
 			"icon": 'fa-bootstrap',
 			"url": '/example/ngx-bootstrap'
+		}, {
+			"id": "4",
+			"parentId": "1",
+			"name": "树",
+			"keyWord": "tree",
+			"icon": 'fa-tree',
+			"url": '/example/tree'
 		}]
 	}];
 	// 菜单数据
