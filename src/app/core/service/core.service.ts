@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClientService} from "../../shared/http-client/http-client.service";
 import {HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
@@ -10,9 +10,11 @@ import {ToastService} from "../../shared/toast/service/toast.service";
 export class CoreService {
 	private baseUrl = '';
 	private headers = new HttpHeaders();
+	public moduleTreeChange: EventEmitter<string>;
 
 	constructor(private httpClient: HttpClientService, private toastService: ToastService) {
 		this.headers.append('Content-Type', 'application/json');
+		this.moduleTreeChange = new EventEmitter<string>();
 	}
 
 	// 查询

@@ -34,7 +34,7 @@ export class GridBaseComponent implements OnInit {
 
 	@ViewChild(GridBbarComponent)
 	private bbar: GridBbarComponent;
-	private serverPage: boolean = !isUndefined(this.rowDataUrl); // 服务端分页
+	protected serverPage: boolean = !isUndefined(this.rowDataUrl); // 服务端分页
 	constructor(private gridService: GridService) {
 	}
 

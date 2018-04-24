@@ -1,5 +1,5 @@
 import { Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {ToastService} from "../../shared/toast/service/toast.service";
 
@@ -12,8 +12,15 @@ export function StartupServiceFactory(startupService: StartupService): Function 
  */
 @Injectable()
 export class StartupService {
+	private headers = new HttpHeaders();
+	private tokon: Object = null;
+	private moduleTree: Array<any> = [];
+	private resources: Array<any> = [];
+
 	// 防止造成循环依赖
-    constructor(private http: HttpClient, private toastService: ToastService) { }
+    constructor(private http: HttpClient, private toastService: ToastService) {
+		this.headers.append('Content-Type', 'application/json');
+	}
 	load(): Promise<any> {
 		// only works with promises
 		// https://github.com/angular/angular/issues/15088
@@ -27,7 +34,6 @@ export class StartupService {
 					})
 				).subscribe((data) => {
 					if (data['devmode']) {
-						this.toastService.success('测试中');
 						this.loginTest(resolve, reject, data);
 					}
 				},
@@ -39,20 +45,54 @@ export class StartupService {
 	}
 
 	private loginTest (resolve, reject, data) {
-    	const submitData = {};
-    	const url = '';
+    	const submitData = {
+			userName: data.dev_user.username,
+			password: data.dev_user.password
+		};
+    	const url = data.restapi.devurl + '/system/user/login';
 
-    	this.http.get('assets/user.json').pipe(
+    	this.http.post(url, null , {
+			headers: this.headers,
+			params: submitData
+		}).pipe(
             catchError((userData) => {
 				resolve(null);
 				return userData;
 			})
-		).subscribe((userData) => {
+		).subscribe((userData: object) => {
 			console.log(userData);
+			this.toastService.success('测试中');
+			this.setModuleTree(userData.data.moduleTree);
+			this.setResource(userData.data.resources);
+			this.setToken(userData.data.token);
 		},
 		() => { },
 		() => {
 			resolve(null);
 		});
+	}
+
+	public setModuleTree(moduleTree: Array<any>) {
+		this.moduleTree = moduleTree;
+	}
+
+	public getModuleTree() {
+		return this.moduleTree;
+	}
+
+	public setResource(resources: Array<any>) {
+		this.resources = resources;
+	}
+
+	public getResource() {
+		return this.resources;
+	}
+
+	public setToken(object: Object) {
+		this.tokon = object;
+	}
+
+	public getUserToken() {
+		return this.tokon;
 	}
 }

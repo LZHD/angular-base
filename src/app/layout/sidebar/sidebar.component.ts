@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MenuData} from "../model/mainModel";
 import {Router} from "@angular/router";
 import {TypeaheadMatch} from "ngx-bootstrap";
+import {StartupService} from "../../core/startup/startup.service";
+import {CoreService} from "../../core/service/core.service";
 
 @Component({
 	selector: 'app-sidebar',
@@ -63,7 +65,10 @@ export class SidebarComponent implements OnInit {
 	// 菜单数据
 	private activeMenu = null;
 
-	constructor(private router: Router) {
+	constructor(private router: Router, protected startService: StartupService, protected coreService: CoreService) {
+		this.coreService.moduleTreeChange.subscribe(data => {
+			this.getMenudata();
+		});
 	}
 
 	ngOnInit() {
@@ -74,7 +79,8 @@ export class SidebarComponent implements OnInit {
 	 * 获取菜单数据
 	 */
 	getMenudata() {
-		this.menuData = this.fixedMenu;
+		this.menuData = this.fixedMenu.concat(this.startService.getModuleTree());
+		console.log(this.menuData);
 		this.handleMenuData();
 	}
 
