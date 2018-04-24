@@ -5,15 +5,7 @@
 		</alert>
 	</div>
 	<div class="c-content-inner container-fluid">
-		<div class="mb-4">
-			<button type="button" class="btn btn-primary btn-d" (click)="panTo()"><i class="fa fa-plus-circle mr-2"></i>改变中心
-			</button>
-			<button type="button" class="btn btn-secondary" (click)="zoom()">缩放</button>
-			<button type="button" class="btn btn-success" (click)="infoWindow()">添加标记</button>
-			<button type="button" class="btn btn-default" (click)="all()">添加全景</button>
-			<button type="button" class="btn btn-default" (click)="open()">测试</button>
-		</div>
-		<abm-map #map [options]="options" (ready)="onReady($event)" style="height:500px; border-radius: 10px"></abm-map>
+		<app-map></app-map>
 	</div>
 </div>
 

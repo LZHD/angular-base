@@ -13,7 +13,8 @@ import {NgxBootstrapComponent} from './ngx-bootstrap/ngx-bootstrap.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TreeComponent } from './tree/tree.component';
-import {TreeModule} from "angular-tree-component";
+import {TreeBaseModule} from "../../shared/tree-base/tree-base.module";
+import {MapModule} from "../../shared/map/map.module";
 
 @NgModule({
 	imports: [
@@ -35,14 +36,12 @@ import {TreeModule} from "angular-tree-component";
 		TimepickerModule.forRoot(),
 		TooltipModule.forRoot(),
 		TypeaheadModule.forRoot(),
-		AbmModule.forRoot({
-			apiKey: 'yGBSbH5fsYTjnzbMdedroaqm0AHL9nef'
-		}),
 		GridBaseModule,
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		TreeModule
+		TreeBaseModule,
+		MapModule
 	],
 	declarations: [
 		MapsComponent,

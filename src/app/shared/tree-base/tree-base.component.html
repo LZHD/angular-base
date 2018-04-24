@@ -1,0 +1,37 @@
+<div class="card">
+	<div class="card-header" *ngIf="treeTitle">
+		<span class="fa fa-tree"></span>
+		<span class="pl-1">{{treeTitle}}</span>
+	</div>
+	<div class="card-body">
+		<form class="form-inline" *ngIf="showFilter">
+			<input #filter class="form-control" (keyup)="treeFilter(filter.value, tree.treeModel)" placeholder="输入过滤条件">
+		</form>
+		<div [ngStyle]="treeStyle">
+			<tree-root #tree
+					   [nodes]="nodes"
+					   [options]="treeOptions"
+					   (activate)="onActivate($event)"
+					   (moveNode)="onMove($event)"
+						>
+
+				<ng-template #treeNodeTemplate let-node="node" let-index="index">
+					<label class="custom-control custom-checkbox" *ngIf="showCheckbox">
+						<input type="checkbox" class="custom-control-input"
+							   (change)="check(node, $event)"
+							   [indeterminate]="node.data.indeterminate"
+							   [checked]="node.data.checked" id="customCheck1">
+						<span class="custom-control-label" for="customCheck1">{{ node.data.name || node.data.moduleName }}</span>
+					</label>
+
+					<label class="custom-control pl-0" *ngIf="!showCheckbox">
+						<span class="custom-control-inline">{{ node.data.name || node.data.moduleName }}</span>
+					</label>
+					<span class="pull-right pr-1">{{ childrenCount(node) }}</span>
+				</ng-template>
+				<ng-template #loadingTemplate>加载中....</ng-template>
+				>
+			</tree-root>
+		</div>
+	</div>
+</div>

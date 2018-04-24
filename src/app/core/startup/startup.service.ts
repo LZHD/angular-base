@@ -62,9 +62,9 @@ export class StartupService {
 		).subscribe((userData: object) => {
 			console.log(userData);
 			this.toastService.success('测试中');
-			this.setModuleTree(userData.data.moduleTree);
-			this.setResource(userData.data.resources);
-			this.setToken(userData.data.token);
+			this.setModuleTree(userData['data'].moduleTree);
+			this.setResource(userData['data'].resources);
+			this.setToken(userData['data'].token);
 		},
 		() => { },
 		() => {

@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from "@angular/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 // 第三方
 import {AgGridModule} from "ag-grid-angular";
@@ -12,6 +11,8 @@ import {BrowserModule} from "@angular/platform-browser";
 import {GridBaseModule} from "./grid-base/grid-base.module";
 import {ToastModule} from "./toast/toast.module";
 import {HttpClientModule} from "@angular/common/http";
+import {TreeBaseModule} from "./tree-base/tree-base.module";
+import {MapModule} from "./map/map.module";
 
 /**
  * 公共模块
@@ -21,7 +22,6 @@ import {HttpClientModule} from "@angular/common/http";
 		CommonModule,
 		FormsModule,
 		RouterModule,
-		HttpModule,
 		HttpClientModule
 	],
 	declarations: [],
@@ -38,7 +38,9 @@ import {HttpClientModule} from "@angular/common/http";
 		SidebarModule,
 		AgGridModule,
 		GridBaseModule,
-		ToastModule
+		ToastModule,
+		TreeBaseModule,
+		MapModule
 	]
 })
 export class SharedModule {
