@@ -5,7 +5,14 @@
 		</alert>
 	</div>
 	<div class="c-content-inner container-fluid">
-		<app-map></app-map>
+		<div class="card">
+			<div class="card-header">
+				<app-grid-ttar [ttars]="ttars"></app-grid-ttar>
+			</div>
+			<div class="card-body">
+				<app-map #testMap (onClicked)="click($event)"></app-map>
+			</div>
+		</div>
 	</div>
 </div>
 

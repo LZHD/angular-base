@@ -1,4 +1,4 @@
-import {Component, OnDestroy, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
 import {AbmComponent} from "angular-baidu-maps";
 
 
@@ -11,12 +11,15 @@ declare const BMAP_SATELLITE_MAP: any;
 	styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnDestroy {
-	options: any = {};
-	status = '';
+	protected options: any = {};
+	protected status = '';
+	protected baseAddress: object;
+	@Output() public onClicked: EventEmitter<any> = new EventEmitter();
 	@ViewChild('map') mapComp: AbmComponent;
 	satelliteOptions: any;
 	private mapSatellite: any;
 	private _map: any;
+	public geoc: any;
 
 	constructor() {
 	}
@@ -24,6 +27,7 @@ export class MapComponent implements OnDestroy {
 
 	private onReady(map: any) {
 		this._map = map;
+		this.geoc = new BMap.Geocoder();
 		map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
 		map.addControl(new BMap.MapTypeControl());
 		map.setCurrentCity('北京');
@@ -38,6 +42,7 @@ export class MapComponent implements OnDestroy {
 
 	_click(e: any) {
 		this.status = `${e.point.lng}, ${e.point.lat}, ${+new Date}`;
+		this.onClicked.emit(e);
 	}
 
 	public panTo() {

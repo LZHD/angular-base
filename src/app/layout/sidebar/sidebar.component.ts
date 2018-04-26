@@ -65,7 +65,7 @@ export class SidebarComponent implements OnInit {
 	// 菜单数据
 	private activeMenu = null;
 
-	constructor(private router: Router, protected startService: StartupService, protected coreService: CoreService) {
+	constructor(private router: Router, private startService: StartupService, private coreService: CoreService) {
 		this.coreService.moduleTreeChange.subscribe(data => {
 			this.getMenudata();
 		});
