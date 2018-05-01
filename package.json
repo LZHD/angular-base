@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@jaspero/ng2-confirmations": "^0.2.9",
+    "@mdi/font": "^2.3.54",
     "ag-grid": "^17.0.0",
     "ag-grid-angular": "^17.0.0",
     "ag-grid-enterprise": "^17.0.0",
