@@ -29,9 +29,9 @@ export class MapComponent implements OnDestroy {
 		this._map = map;
 		this.geoc = new BMap.Geocoder();
 		map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-		map.addControl(new BMap.MapTypeControl());
+		// map.addControl(new BMap.MapTypeControl()); // 添加地图类型切换
 		map.setCurrentCity('北京');
-		map.enableScrollWheelZoom(true);
+		map.enableScrollWheelZoom(true); // 鼠标滚轮缩放
 		this.status = '加载完成';
 		// 添加监听事件
 		map.addEventListener('tilesloaded', () => {
