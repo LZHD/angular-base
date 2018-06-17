@@ -3,7 +3,8 @@ import {MenuData} from "../model/mainModel";
 import {Router} from "@angular/router";
 import {TypeaheadMatch} from "ngx-bootstrap";
 import {StartupService} from "../../core/startup/startup.service";
-import {CoreService} from "../../core/service/core.service";
+import {SidebarService} from './service/sidebar.service';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
 	selector: 'app-sidebar',
@@ -11,45 +12,6 @@ import {CoreService} from "../../core/service/core.service";
 	styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-
-	// 固定的菜单信息
-	private fixedMenu = [{
-		"id": "1",
-		"parentId": "0",
-		"name": "学习示例",
-		"keyWord": "toast",
-		"icon": 'fa-wrench',
-		"isExpend": false,
-		"children": [{
-			"id": "1",
-			"parentId": "1",
-			"name": "地图",
-			"keyWord": "mtk",
-			"icon": 'fa-map-marker',
-			"url": '/example/maps'
-		}, {
-			"id": "2",
-			"parentId": "1",
-			"name": "表格",
-			"keyWord": "grid",
-			"icon": 'fa-grid',
-			"url": '/example/grid'
-		}, {
-			"id": "3",
-			"parentId": "1",
-			"name": "ngx-bootstrap",
-			"keyWord": "ngx",
-			"icon": 'fa-bootstrap',
-			"url": '/example/ngx-bootstrap'
-		}, {
-			"id": "4",
-			"parentId": "1",
-			"name": "树",
-			"keyWord": "tree",
-			"icon": 'fa-tree',
-			"url": '/example/tree'
-		}]
-	}];
 	// 菜单数据
 	private menuData = [];
 	// 显示的菜单数据
@@ -64,14 +26,16 @@ export class SidebarComponent implements OnInit {
 	public dataArray = [];
 	// 菜单数据
 	private activeMenu = null;
+	private chag: Subscription;
 
-	constructor(private router: Router, private startService: StartupService, private coreService: CoreService) {
-		this.coreService.moduleTreeChange.subscribe(data => {
-			this.getMenudata();
-		});
+	constructor(private router: Router, private startService: StartupService,
+				private sidebarService: SidebarService) {
 	}
 
 	ngOnInit() {
+		this.chag = <any>this.sidebarService.change.subscribe(res => {
+			this.menuData = res;
+		});
 		this.getMenudata();
 	}
 
@@ -79,8 +43,6 @@ export class SidebarComponent implements OnInit {
 	 * 获取菜单数据
 	 */
 	getMenudata() {
-		this.menuData = this.fixedMenu.concat(this.startService.getModuleTree());
-		console.log(this.menuData);
 		this.handleMenuData();
 	}
 

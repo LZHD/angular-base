@@ -9,6 +9,7 @@ import {StartupService, StartupServiceFactory} from "./core/startup/startup.serv
 import {CoreModule} from "./core/core.module";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {DefaultInterceptor} from "./core/net/default-interceptor";
+import {SidebarService} from './layout/sidebar/service/sidebar.service';
 
 @NgModule({
 	declarations: [
@@ -34,7 +35,8 @@ import {DefaultInterceptor} from "./core/net/default-interceptor";
 			useFactory: StartupServiceFactory,
 			deps: [StartupService],
 			multi: true
-		}
+		},
+		SidebarService
 	],
 	bootstrap: [AppComponent]
 })

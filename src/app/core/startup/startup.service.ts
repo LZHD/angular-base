@@ -2,6 +2,7 @@ import { Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {ToastService} from "../../shared/toast/service/toast.service";
+import {SidebarService} from '../../layout/sidebar/service/sidebar.service';
 
 export function StartupServiceFactory(startupService: StartupService): Function {
 	return () => startupService.load();
@@ -18,7 +19,8 @@ export class StartupService {
 	private resources: Array<any> = [];
 
 	// 防止造成循环依赖
-    constructor(private http: HttpClient, private toastService: ToastService) {
+    constructor(private http: HttpClient, private toastService: ToastService,
+				private sidebarService: SidebarService) {
 		this.headers.append('Content-Type', 'application/json');
 	}
 	load(): Promise<any> {
@@ -35,6 +37,7 @@ export class StartupService {
 				).subscribe((data) => {
 					if (data['devmode']) {
 						this.loginTest(resolve, reject, data);
+						this.sidebarService.add(data["moduletree"]);
 					}
 				},
 				() => { },

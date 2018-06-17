@@ -10,11 +10,9 @@ import {ToastService} from "../../shared/toast/service/toast.service";
 export class CoreService {
 	private baseUrl = '';
 	private headers = new HttpHeaders();
-	public moduleTreeChange: EventEmitter<string>;
 
 	constructor(private httpClient: HttpClientService, private toastService: ToastService) {
 		this.headers.append('Content-Type', 'application/json');
-		this.moduleTreeChange = new EventEmitter<string>();
 	}
 
 	// 查询
