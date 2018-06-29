@@ -1,16 +1,15 @@
 import {Injectable} from '@angular/core';
-import {ConfirmationService} from "@jaspero/ng2-confirmations";
-import {ConfirmSettings} from "@jaspero/ng2-confirmations/src/interfaces/confirm-settings";
 import {Subject} from "rxjs/Subject";
 import {ToastConfig, ToastType} from "../model/toast-model";
 import {Observable} from "rxjs/Observable";
+import {ConfirmationService, ConfirmSettings} from "@jaspero/ng-confirmations";
 
 /**
  * toast服务
  */
 @Injectable()
 export class ToastService {
-	private title: string = '操作提示';
+	private title: String = '操作提示';
 	private toastSubject = new Subject<ToastConfig>();
 
 	constructor(private confirmService: ConfirmationService) {
