@@ -1,8 +1,7 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClientService} from "../../shared/http-client/http-client.service";
 import {HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
-import {of} from "rxjs/observable/of";
+import {Observable, of} from "rxjs";
 import {catchError} from "rxjs/operators";
 import {ToastService} from "../../shared/toast/service/toast.service";
 

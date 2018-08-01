@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {TypeaheadMatch} from "ngx-bootstrap";
 import {StartupService} from "../../core/startup/startup.service";
 import {SidebarService} from './service/sidebar.service';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 
 @Component({
 	selector: 'app-sidebar',

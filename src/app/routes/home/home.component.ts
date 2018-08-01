@@ -1,8 +1,10 @@
+
+import {map} from 'rxjs/operators';
 import {Component, OnInit} from "@angular/core";
 import {TodoObjData, NeedReadObjData, NoticeObjData, CommonFuncData} from "./home-model";
 import {Observable} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import 'rxjs/add/operator/map';
+
 
 @Component({
 	selector: 'home',
@@ -231,13 +233,13 @@ export class HomeComponent implements OnInit {
 	ngOnInit() {
 		// Capture the session ID if available
 		this.sessionId = this.route
-			.queryParams
-			.map(params => params['session_id'] || 'None');
+			.queryParams.pipe(
+			map(params => params['session_id'] || 'None'));
 
 		// Capture the fragment if available
 		this.token = this.route
-			.fragment
-			.map(fragment => fragment || 'None');
+			.fragment.pipe(
+			map(fragment => fragment || 'None'));
 	}
 
 	constructor(private route: ActivatedRoute) {
