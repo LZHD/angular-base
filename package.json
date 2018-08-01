@@ -37,9 +37,8 @@
     "ng-zorro-antd": "^1.2.0",
     "ng2-dnd": "^5.0.2",
     "ng2-semantic-ui": "^0.9.7",
-    "ngx-bootstrap": "^2.0.3",
+    "ngx-bootstrap": "^3.0.1",
     "rxjs": "^6.0.0",
-    "rxjs-compat": "^6.0.0",
     "screenfull": "^3.3.2",
     "zone.js": "^0.8.26"
   },
