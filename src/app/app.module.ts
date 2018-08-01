@@ -10,7 +10,11 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {DefaultInterceptor} from "./core/net/default-interceptor";
 import {SidebarService} from './layout/sidebar/service/sidebar.service';
 import {JasperoConfirmationsModule} from "@jaspero/ng-confirmations";
+import {NgZorroAntdModule, NZ_I18N, zh_CN} from "ng-zorro-antd";
+import {registerLocaleData} from "@angular/common";
+import zh from '@angular/common/locales/zh';
 
+registerLocaleData(zh);
 @NgModule({
 	declarations: [
 		AppComponent
@@ -21,7 +25,8 @@ import {JasperoConfirmationsModule} from "@jaspero/ng-confirmations";
 		SharedModule,
 		RoutesModule,
 		JasperoConfirmationsModule.forRoot(),
-		ToastModule
+		ToastModule,
+		NgZorroAntdModule
 	],
 	providers: [
 		{
@@ -35,6 +40,10 @@ import {JasperoConfirmationsModule} from "@jaspero/ng-confirmations";
 			useFactory: StartupServiceFactory,
 			deps: [StartupService],
 			multi: true
+		},
+		{
+			provide: NZ_I18N,
+			useValue: zh_CN
 		},
 		SidebarService
 	],
