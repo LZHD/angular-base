@@ -11,7 +11,7 @@ export class GridBbarComponent implements OnInit {
 	@Output() onReLoad = new EventEmitter<Object>();
 	@Input() serverPage: boolean = true;
 	@Input() gridApi;
-	private themes = ['默认', '浅蓝', '炫黑', '鲜明', '无边框'];
+	protected themes = ['默认', '浅蓝', '炫黑', '鲜明', '无边框'];
 	private mapping = {
 		'默认': 'ag-theme-material',
 		'浅蓝': 'ag-theme-blue',
@@ -19,11 +19,11 @@ export class GridBbarComponent implements OnInit {
 		'鲜明': 'ag-theme-fresh',
 		'无边框': 'ag-theme-bootstrap'
 	};
-	private theme: string = this.themes[0];
-	private limits: number[] = [10, 25, 50, 200, 500];
+	protected theme: string = this.themes[0];
+	protected limits: number[] = [10, 25, 50, 200, 500];
 	public pageParams = new PageParams();
 	// 禁用分页
-	public disabledLimit: boolean = false;
+	public disabledLimit: Boolean = false;
 
 	constructor() {
 		this.pageParams.size = this.limits[2];
@@ -42,7 +42,7 @@ export class GridBbarComponent implements OnInit {
 		};
 	}
 
-	protected themeChange(theme: string) {
+	private themeChange(theme: string) {
 		this.onThemeChange.emit(this.mapping[theme]);
 	}
 

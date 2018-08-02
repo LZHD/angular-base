@@ -1,20 +1,22 @@
 <div class="form-inline pr-3">
-	<sui-select placeholder="主题" class="pr-3"
-				[(ngModel)]="theme"
-				[options]="themes"
-				(ngModelChange)="themeChange($event)"
-				#themeSelect>
-		<sui-select-option *ngFor="let item of themeSelect.availableOptions" [value]="item"></sui-select-option>
-	</sui-select>
-	<sui-select placeholder="条数"
-				*ngIf="!disabledLimit"
-				[isDisabled]="disabledLimit"
-				[(ngModel)]="pageParams.size"
-				(ngModelChange)="limitChange($event)"
-				[options]="limits"
-				#limitSelect>
-		<sui-select-option *ngFor="let item of limitSelect.availableOptions" [value]="item"></sui-select-option>
-	</sui-select>
+	<nz-select nzPlaceHolder="主题"
+			   [(ngModel)]="theme"
+			   (ngModelChange)="themeChange($event)">
+		<nz-option *ngFor="let item of themes"
+				   [nzLabel]="item"
+				   [nzValue]="item">
+		</nz-option>
+	</nz-select>
+	<nz-select nzPlaceHolder="条数"
+			   *ngIf="!disabledLimit"
+			   [nzDisabled]="disabledLimit"
+			   [(ngModel)]="pageParams.size"
+			   (ngModelChange)="limitChange($event)">
+		<nz-option *ngFor="let item of limits"
+				   [nzLabel]="item"
+				   [nzValue]="item">
+		</nz-option>
+	</nz-select>
 	<span class="ml-2" *ngIf="!disabledLimit">条/页</span>
 	<form class="form-inline position-absolute" style="right: 1rem">
 		<button class="btn btn-sm btn-outline-primary pagination-btn" [disabled]="pageParams.first"

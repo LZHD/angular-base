@@ -6,13 +6,15 @@ import {LayoutModule} from "./layout/layout.module";
 import {ToastModule} from "./shared/toast/toast.module";
 import {StartupService, StartupServiceFactory} from "./core/startup/startup.service";
 import {CoreModule} from "./core/core.module";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {DefaultInterceptor} from "./core/net/default-interceptor";
 import {SidebarService} from './layout/sidebar/service/sidebar.service';
 import {JasperoConfirmationsModule} from "@jaspero/ng-confirmations";
 import {NgZorroAntdModule, NZ_I18N, zh_CN} from "ng-zorro-antd";
 import {registerLocaleData} from "@angular/common";
 import zh from '@angular/common/locales/zh';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserModule} from "@angular/platform-browser";
 
 registerLocaleData(zh);
 @NgModule({
@@ -20,13 +22,15 @@ registerLocaleData(zh);
 		AppComponent
 	],
 	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		HttpClientModule,
 		CoreModule,
 		LayoutModule,
 		SharedModule,
 		RoutesModule,
 		JasperoConfirmationsModule.forRoot(),
-		ToastModule,
-		NgZorroAntdModule
+		ToastModule
 	],
 	providers: [
 		{

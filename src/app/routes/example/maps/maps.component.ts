@@ -1,5 +1,4 @@
 import {Component, ViewChild} from '@angular/core';
-import {ModalTemplate, SuiModalService, TemplateModalConfig} from "ng2-semantic-ui";
 import {Ttars} from "../../../shared/grid-base/model/GridbaseModel";
 import {MapComponent} from "../../../shared/map/map.component";
 
@@ -10,12 +9,10 @@ import {MapComponent} from "../../../shared/map/map.component";
 })
 export class MapsComponent {
 	protected ttars: Ttars[];
-	@ViewChild('modalTemplate')
-	public modalTemplate: ModalTemplate<string, string, string>;
 	@ViewChild('testMap')
 	public testMap: MapComponent;
 
-	constructor(public modalService: SuiModalService) {
+	constructor() {
 		this.ttars = [
 			{name: '改变中心', cls: 'btn-success', iconCls: 'fa fa-plus-square-o mr-2', onClick: this.panTo},
 			{name: '缩放', cls: 'btn-danger', iconCls: 'fa fa-trash mr-2', onClick: this.zoom},
@@ -23,11 +20,6 @@ export class MapsComponent {
 			{name: '添加全景', cls: 'btn-success', iconCls: 'fa fa-plus-circle mr-2', onClick: this.all},
 			{name: '位置', cls: 'btn-success', iconCls: 'fa fa-plus-circle mr-2', onClick: this.click}
 		];
-	}
-
-	open() {
-		const config = new TemplateModalConfig(this.modalTemplate);
-		this.modalService.open(config);
 	}
 
 	panTo = () => {
