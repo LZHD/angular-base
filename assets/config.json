@@ -7,5 +7,42 @@
 	"restapi":{
 		"url":"/manage/v1",
 		"devurl":"http://192.168.1.56:8080/api"
-	}
+	},
+	"moduletree": [{
+		"id": "1",
+		"parentId": "0",
+		"name": "学习示例",
+		"keyWord": "toast",
+		"icon": "fa-wrench",
+		"isExpend": false,
+		"children": [{
+			"id": "1",
+			"parentId": "1",
+			"name": "地图",
+			"keyWord": "mtk",
+			"icon": "fa-map-marker",
+			"url": "/example/maps"
+		}, {
+			"id": "2",
+			"parentId": "1",
+			"name": "表格",
+			"keyWord": "grid",
+			"icon": "fa-grid",
+			"url": "/example/grid"
+		}, {
+			"id": "3",
+			"parentId": "1",
+			"name": "ngx-bootstrap",
+			"keyWord": "ngx",
+			"icon": "fa-bootstrap",
+			"url": "/example/ngx-bootstrap"
+		}, {
+			"id": "4",
+			"parentId": "1",
+			"name": "树",
+			"keyWord": "tree",
+			"icon": "fa-tree",
+			"url": "/example/tree"
+		}]
+	}]
 }
